@@ -1,8 +1,5 @@
 // components/Contact.tsx
 'use client';
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-
 const Contact = () => {
   return (
     <section id="contact" style={{ padding: '80px 16px', textAlign: 'center', backgroundColor: '#112240' }}>
