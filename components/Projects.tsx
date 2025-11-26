@@ -18,10 +18,10 @@ const myProjects = [
     link: '',
   },
   {
-    title: 'Aplikasi Cuaca Real-time',
-    description: 'Aplikasi sederhana untuk menampilkan data cuaca saat ini berdasarkan lokasi, menggunakan API publik.',
-    tags: ['React', 'API', 'CSS Modules'],
-    link: '',
+    title: 'Weather Dashboard',
+    description: 'Weather App Aplikasi cuaca interaktif berbasis web yang dibangun dengan Vue 3 dan Vite. Menampilkan data cuaca real-time dengan desain Glassmorphism yang elegan, dukungan mode gelap/terang, serta fitur dwibahasa (Indonesia/Inggris)',
+    tags: ['Vue.js', 'Vite', 'API', 'Tailwind CSS'],
+    link: 'https://perkiraancuacabyirvan.netlify.app/',
   },
 ];
 
