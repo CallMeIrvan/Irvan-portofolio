@@ -1,8 +1,8 @@
 // components/Hero.tsx
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
+import ProfileCard from './ProfileCard';
 
 const Hero = () => {
   return (
@@ -47,16 +47,17 @@ const Hero = () => {
         viewport={{ once: false, amount: 0.5 }} // Animasi ulang setiap kali masuk viewport
         transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
       >
-        <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px]">
-          {/* Decorative Circle */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 blur-2xl opacity-20 animate-pulse"></div>
-
-          <Image
-            src="/van.jpg"
-            alt="Foto Profil Reovan Wilfred Sakbana"
-            fill
-            className="rounded-full object-cover border-4 border-gray-800 shadow-2xl relative z-10"
-            priority
+        <div className="relative w-full max-w-[300px] md:max-w-[400px] mx-auto">
+          <ProfileCard
+            avatarUrl="/van.png"
+            name="Reovan Wilfred S."
+            title="Web & Mobile Developer"
+            handle="reovanws"
+            status="Open to Work"
+            contactText="Hubungi Saya"
+            onContactClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            enableTilt={true}
+            enableMobileTilt={true}
           />
         </div>
       </motion.div>

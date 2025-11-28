@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
 
-
 const VERT = `#version 300 es
 in vec2 position;
 void main() {
@@ -138,11 +137,6 @@ export default function Aurora(props: AuroraProps) {
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
     gl.canvas.style.backgroundColor = 'transparent';
 
-    const geometry = new Triangle(gl);
-    if (geometry.attributes.uv) {
-      delete geometry.attributes.uv;
-    }
-
     const colorStopsArray = colorStops.map(hex => {
       const c = new Color(hex);
       return [c.r, c.g, c.b];
@@ -169,6 +163,11 @@ export default function Aurora(props: AuroraProps) {
     }
     window.addEventListener('resize', resize);
 
+    const geometry = new Triangle(gl);
+    if (geometry.attributes.uv) {
+      delete geometry.attributes.uv;
+    }
+
     const mesh = new Mesh(gl, { geometry, program });
     ctn.appendChild(gl.canvas);
 
@@ -176,17 +175,16 @@ export default function Aurora(props: AuroraProps) {
     const update = (t: number) => {
       animateId = requestAnimationFrame(update);
       const { time = t * 0.01, speed = 1.0 } = propsRef.current;
-      if (program) {
-        program.uniforms.uTime.value = time * speed * 0.1;
-        program.uniforms.uAmplitude.value = propsRef.current.amplitude ?? 1.0;
-        program.uniforms.uBlend.value = propsRef.current.blend ?? blend;
-        const stops = propsRef.current.colorStops ?? colorStops;
-        program.uniforms.uColorStops.value = stops.map((hex: string) => {
-          const c = new Color(hex);
-          return [c.r, c.g, c.b];
-        });
-        renderer.render({ scene: mesh });
-      }
+      
+      program.uniforms.uTime.value = time * speed * 0.1;
+      program.uniforms.uAmplitude.value = propsRef.current.amplitude ?? 1.0;
+      program.uniforms.uBlend.value = propsRef.current.blend ?? blend;
+      const stops = propsRef.current.colorStops ?? colorStops;
+      program.uniforms.uColorStops.value = stops.map((hex: string) => {
+        const c = new Color(hex);
+        return [c.r, c.g, c.b];
+      });
+      renderer.render({ scene: mesh });
     };
     animateId = requestAnimationFrame(update);
 
@@ -200,8 +198,7 @@ export default function Aurora(props: AuroraProps) {
       }
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [amplitude]);
 
-  return <div ref={ctnDom} style={{ width: '100%', height: '100%' }} />;
+  return <div ref={ctnDom} className="w-full h-full" />;
 }
