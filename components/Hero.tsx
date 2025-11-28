@@ -4,6 +4,7 @@
 import { motion } from 'framer-motion';
 import ProfileCard from './ProfileCard';
 
+// Force rebuild
 const Hero = () => {
   return (
     <section id="home" className="flex flex-col md:flex-row items-center justify-center min-h-screen text-white text-center md:text-left p-8 overflow-hidden">
