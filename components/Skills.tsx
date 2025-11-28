@@ -25,7 +25,7 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-24 overflow-hidden">
       <div className="container mx-auto px-4 text-center">
         <div className="mb-16">
           <motion.h2
@@ -45,7 +45,7 @@ const Skills = () => {
             viewport={{ once: false, amount: 0.5 }}
           />
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-8">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}

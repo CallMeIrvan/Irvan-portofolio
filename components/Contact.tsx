@@ -6,7 +6,7 @@ import { FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 px-4">
+    <section id="contact" className="py-24 px-4 overflow-hidden">
       <div className="container mx-auto text-center">
         <div className="mb-16">
           <motion.h2

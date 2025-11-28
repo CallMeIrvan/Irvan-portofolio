@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section id="home" className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-[#0a192f] text-white text-center md:text-left p-8 overflow-hidden">
+    <section id="home" className="flex flex-col md:flex-row items-center justify-center min-h-screen text-white text-center md:text-left p-8 overflow-hidden">
       {/* Text Content */}
       <motion.div
         className="md:w-1/2 mb-10 md:mb-0 z-10"

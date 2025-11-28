@@ -27,7 +27,7 @@ const myProjects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 px-4">
+    <section id="projects" className="py-20 px-4 overflow-hidden">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <motion.h2

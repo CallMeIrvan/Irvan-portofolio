@@ -8,7 +8,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-24 bg-gray-800"
+      className="py-24 overflow-hidden"
     >
       <div className="container mx-auto px-4 text-center">
         <div className="mb-16">
