@@ -31,7 +31,7 @@ const Hero = () => {
           whileTap={{ scale: 0.95 }}
         >
           <a
-            href="/SoftCopyCV Reovan Wilfred Sakbana.pdf"
+            href="/cv-reovan-new.pdf"
             download
             className="inline-block bg-gradient-to-r from-blue-500 to-teal-400 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-blue-500/30 transition-all duration-300"
           >
